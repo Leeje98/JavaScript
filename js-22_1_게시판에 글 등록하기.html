@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript__Bulletin_Board</title>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            document.querySelector('.btn').addEventListener('click', function(){
+
+                let newBoardP = document.createElement('p')
+                let newBulletin = document.querySelector('.new_bulletin')
+                let newTxt = document.createTextNode(newBulletin.value)
+
+                newBoardP.appendChild(newTxt)
+
+                let BoardList = document.querySelector('.board_list')
+
+                BoardList.insertBefore(newBoardP, BoardList.childNodes[0])
+
+                newBulletin.value = ''
+
+            })
+
+
+        })
+        
+
+
+    </script>
+
+    
+    <style>
+
+        .board_wrap {
+            width: 380px;
+        }
+        form {
+            text-align: center;
+        }
+        .new_bulletin {
+            width: 300px; height: 60px;
+        }
+        .btn {
+            height: 60px;
+            cursor: pointer;
+        }
+        .title {
+            width: 380px;
+            background-color: #ccc;
+            border: 1px solid #333;
+            box-sizing: border-box;
+            text-align: center;
+            line-height: 50px;
+            margin-top: 20px;
+        }
+
+        .board_list {
+            border: 1px solid #333;
+            border-top: none;
+            box-sizing: border-box;
+            width: 380px;
+            min-height: 50px;
+            padding: 5px;
+        }
+
+        .board_list p {
+            width: 360px;
+            padding: 5px;
+            border: 1px solid #333;
+            box-sizing: border-box;
+            text-align: center;
+            margin: 5px auto;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 2;
+        }
+        
+        
+    </style>
+</head>
+<body>
+
+    <div class="board_wrap">
+
+        <form action="">
+            <input type="text" class="new_bulletin" placeholder="새글을 등록해주세요" autofocus>
+            <button type="button" class="btn">등록</button>
+        </form>
+        <!-- <hr> -->
+        <div class="title">게시판</div>
+        <div class="board_list"></div>
+
+    
+    
+
+
+    </div>
+    
+</body>
+</html>

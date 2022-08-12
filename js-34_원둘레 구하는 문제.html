@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            let num = document.querySelector('#number')
+            let cir = document.querySelector('#circumference')
+            let are = document.querySelector('#area')
+            const Btn = document.querySelector('#btn')
+
+            Btn.addEventListener('click', () => {
+                cir.value = num.value * 2 * 3.14
+                are.value = num.value * num.value * 3.14
+            })
+
+        })
+
+    </script>
+
+    
+    <style>
+        
+    </style>
+</head>
+<body>
+
+    <h1>원 둘레와 넓이 계산</h1>
+
+    반지름 :<br>
+    <input type="text" id="number">
+    <button id="btn">계산</button>
+
+    <hr>
+
+    원둘레 :<br>
+    <input type="text" id="circumference"><br>
+    원넓이 :<br>
+    <input type="text" id="area">
+    
+</body>
+</html>

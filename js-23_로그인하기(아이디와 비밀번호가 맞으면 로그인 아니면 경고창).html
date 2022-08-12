@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+ 
+        // 콘솔 창 확인 입력법
+        // document.querySelector('#user_id')                 // 코드만 들어간다
+        // document.querySelector('#user_id').value           // value를 넣어줘야 값을 확인할수있다
+        // document.forms['login'].elements['user_id'].value    // 공식
+        // document.forms
+        // document.forms[0].elements
+        // document.forms[0].elements[0].value
+        // document.login.user_id​
+        // document.login.user_id.value
+
+
+        document.addEventListener('DOMContentLoaded', () =>{
+
+            const Id = 'green'
+            const Pw= '1234'
+
+            let userId = document.querySelector('#user_id')
+            let userPw = document.querySelector('#user_pw')
+
+            userId.onchange = checkId
+            userPw.onchange = checkPw
+
+            function checkId() {
+                if(userId.value != Id) {
+                    alert('아이디가 맞지 않습니다')
+                    userId.value = ''   
+                    userId.focus()
+                }
+            }
+
+            function checkPw() {
+                if(userPw.value != Pw) {
+                    alert('비밀번호가 맞지 않습니다')
+                    userPw.value = ''   
+                    userPw.focus()
+                }
+            }
+
+            document.getElementById("logBtn").onclick = function() {
+                if(userPw.value == Pw && userPw.value == Pw) {
+                    alert('로그인 되었습니다.')
+                } else {
+                    alert('아이디와 비밀번호를 다시 확인해주세요')
+                    userId.value = '' 
+                    userId.value = ''     
+                    userId.focus()
+                }
+            }
+
+            let selectClass = document.request.userSite
+
+            selectClass.onchange = selectUserSite
+
+            function selectUserSite() {
+            let UserESite = selectClass.options[selectClass.selectedIndex].innerText
+            userSite.value = UserESite
+            }
+
+
+        })
+
+    </script>
+
+    
+    <style>
+        
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>로그인</h2>
+        <form action="" name="login">
+                         <!-- 클래스나 아이디를 대신해서 사용 (네임) -->
+            <div class="login_input">
+                <input type="text" id="user_id" name="user_id" class="id" placeholder="아이디" autofocus>
+                                     <!-- 아이디와 네임을 똑같이 해준다(용도가 같다) | 클래스는 디자인을 입힐 목적으로만 사용한다-->
+                <input type="password" id="user_pw" name="user_pw" class="pw" placeholder="비밀번호">
+            </div>
+            <div class="log_btn">
+                <button type="submit" class="logbtn" id="logBtn">로그인</button>
+            </div>
+        </form>
+    </div>
+
+
+
+
+    
+</body>
+</html>

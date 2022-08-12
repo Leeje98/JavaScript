@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0610 평가-2</title>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+
+            let userId = document.querySelector('#user_id')
+
+            userId.onchange = checkId
+
+            function checkId() {
+                if(userId.value.length < 8 || userId.length > 14) {
+                    alert('아이디는 8~14자 이내로 작성해주세요')
+                    userId.value = ''   
+                    userId.focus()
+                }
+            }
+
+            // 아이디 작성 시 글자수 제한
+
+            
+            const IdCheck = document.querySelector('#id_check')
+
+            IdCheck.onclick = function() {
+                if(userId.value == 'greencomputer' || userId.value == 'whitecomputer' || userId.value == 'blackcomputer' || userId.value == 'bluecomputer' || userId.value == 'redcomputer') {
+                    alert('이미 존재하고 있는 아이디 입니다')
+                } else {
+                    alert('사용할 수 있는 아이디입니다')
+                }
+            }
+
+
+            // 아이디 작성 시 아이디 중복확인
+
+
+            let userPw1 = document.querySelector('#password01')
+
+            userPw1.onchange = checkPw
+
+            function checkPw() {
+                if(userPw1.value.length < 8) {
+                    alert('비밀번호는 8자 이상의 문자로 작성해주세요')
+                    userPw1.value = ''   
+                    userPw1.focus()
+                }
+            }
+
+            // 비밀번호 작성 시 글자수 제한
+
+
+            let userPw2 = document.querySelector('#password02')
+            const checkPwbtn = document.querySelector('#pw_check')
+            
+            checkPwbtn.onclick = checkingPW
+
+            function checkingPW() {
+                if(userPw1.value == userPw2.value) {
+                    alert('사용할수 있는 비밀번호 입니다')
+                } else {
+                    alert('비밀번호를 다시 확인해주세요')
+                    userPw2.value = ''
+                    userPw2.focus()
+                }
+            }
+
+            // 비밀번호 작성 확인
+
+
+            let userESite = document.querySelector('#Email02')
+            let ESiteChoice = document.getElementById('Esite')
+
+            ESiteChoice.onchange = userESiteChoice
+
+            function userESiteChoice() {
+                let UserSite = ESiteChoice.options[ESiteChoice.selectedIndex].value
+                userESite.value = UserSite
+            }
+
+            // 선택한 이메일 사이트 인풋박스 값으로 적용하기
+
+
+            let userPostal = document.querySelector('#postal')
+            let AreaChoice = document.getElementById('area')
+
+            AreaChoice.onchange = userTelNo
+
+            function userTelNo() {
+                let Usertel = AreaChoice.options[AreaChoice.selectedIndex].value
+                userPostal.value = Usertel
+            }
+
+            // 선택한 지역으로 우편번호 적용하기
+
+
+            const text1 = document.querySelector('#telno1')
+            const text2 = document.querySelector('#telno2')
+
+            text1.addEventListener('keyup', () => {
+
+                const length = text1.value.length
+
+                if(length >= 4) {
+                    text2.focus()
+                }
+
+            })
+
+            // 텍스트 4자 적히면 다음칸 자동 이동
+
+
+            // const chkinfo = document.querySelector('#all')
+            // const chk1 = document.querySelector('#contract1')
+            // const chk2 = document.querySelector('#contract2')
+
+            // chkinfo.addEventListener('click', function() {
+
+            //     if(chkinfo.checked == false) {
+            //         chk1.("checked", false)
+            //         chk2.("checked", false)
+            //     } else {
+            //         chk1.("checked", true)
+            //         chk2.("checked", true)
+            //     }
+                
+
+            // })
+
+
+
+
+
+
+
+        })
+            
+
+
+    </script>
+
+    
+    <style>
+
+        *{margin: 0; padding: 0;}
+        li {
+            list-style: none;
+            padding: 5px 0;
+        }
+        fieldset {
+            padding: 10px;
+        }
+        h1 {
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        .form_box {
+            padding: 20px;
+        }
+
+        h4 {
+            font-weight: normal;
+            display: inline-block;
+            width: 130px;
+        }
+
+        span {
+            color: red;
+            font-size: 11px;
+        }
+
+        button {
+            color: white;
+            background-color: #333;
+            border-radius: 3px;
+            padding: 0 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .interest {
+            display: flex;
+        }
+
+        .interest li label {
+            margin-right: 20px;
+        }
+
+        .contract_box {
+            display: flex;
+        }
+
+        .contract_box label {
+            width: 100px;
+        }
+
+        .contract_box .text_box {
+            width: calc(100% - 160px);
+            height: 90px;
+            border: 1px solid #333;
+            overflow-y: scroll;
+        }
+
+        .contract_list li {
+            padding: 20px 10px;
+        }
+
+        .button_box {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        
+        
+    </style>
+</head>
+<body>
+
+    <h1>회원가입</h1>
+
+<form action="" name="form">
+    <div class="form_box">
+        
+    <span>*필수입력</span>
+
+    <fieldset>
+        <legend>필수입력사항</legend>
+        <ul>
+            <li>
+                <h4>아이디<span>*</span></h4> <input type="text" id="user_id">
+                <button id="id_check">아이디 중복체크</button>
+                <span>*8~14자 입력</span><br>
+            </li>
+            <li>
+                <h4>비밀번호<span>*</span></h4> <input type="password" id="password01">
+                <span>*8자 이상 입력</span><br>
+            </li>
+            <li>
+                <h4>비밀번호 확인<span>*</span></h4> <input type="password" id="password02">
+                <button id="pw_check">확인</button><br>
+            </li>
+            <li>
+                <h4>성명<span>*</span></h4> <input type="text" id="name"><br>
+            </li>
+            <li>
+                <h4>전자우편<span>*</span></h4> 
+                <input type="text" name="" id="Email01"> @ <input type="text" name="Email02" id="Email02">
+                <select name="Esite" id="Esite">
+                    <option value="">직접입력</option>
+                    <option value="naver.com">네이버</option>
+                    <option value="nate.com">네이트</option>
+                    <option value="daum.net">다음</option>
+                    <option value="gmail.com">구글</option>
+                </select><br>
+            </li>
+            <li>
+                <h4>주소<span>*</span></h4> <input type="text" name="postal" id="postal">
+                <button id="area_btn">우편번호</button><br>
+                <select name="area" id="area" style="margin-left: 135px;">
+                    <option value="">시 · 도</option>
+                    <option value="01234">서울광역시</option>
+                    <option value="01235">부산광역시</option>
+                    <option value="01236">경상남도</option>
+                    <option value="01237">경상북도</option>
+                </select>
+                <input type="text" placeholder="나머지 주소">
+            </li>
+            <li>
+                <h4>휴대전화<span>*</span></h4>
+                <select name="Esite" id="Esite">
+                    <option value="">선택</option>
+                    <option value="010">010</option>
+                    <option value="011">011</option>
+                    <option value="051">051</option>
+                </select>
+                <input type="text" id="telno1"> - <input type="text" id="telno2">
+            </li>
+        </ul>
+
+    </fieldset>
+    <fieldset>
+        <legend>선택입력사항</legend>
+        <ul>
+            <li>
+                <h4>생년월일</h4>
+                <label for="solar1"><input type="radio" name="solar" id="solar1" checked> 양력</label>
+                <label for="solar2"><input type="radio" name="solar" id="solar2"> 음력</label>
+                <select name="year" id="year">
+                    <option value="">선택</option>
+                    <option value="">2022</option>
+                    <option value="">2021</option>
+                    <option value="">2020</option>
+                    <option value="">2019</option>
+                    <option value="">2018</option>
+                    <option value="">2017</option>
+                    <option value="">2016</option>
+                    <option value="">2015</option>
+                    <option value="">2014</option>
+                    <option value="">2013</option>
+                    <option value="">2012</option>
+                    <option value="">2011</option>
+                    <option value="">2010</option>
+                    <option value="">2009</option>
+                    <option value="">2008</option>
+                    <option value="">2007</option>
+                    <option value="">2006</option>
+                    <option value="">2005</option>
+                    <option value="">2004</option>
+                    <option value="">2003</option>
+                    <option value="">2002</option>
+                    <option value="">2001</option>
+                    <option value="">2000</option>
+                    <option value="">1999</option>
+                    <option value="">1998</option>
+                    <option value="">1997</option>
+                    <option value="">1996</option>
+                    <option value="">1995</option>
+                    <option value="">1994</option>
+                    <option value="">1993</option>
+                    <option value="">1992</option>
+                    <option value="">1991</option>
+                    <option value="">1990</option>
+                    <option value="">1989</option>
+                    <option value="">1987</option>
+                    <option value="">1986</option>
+                    <option value="">1985</option>
+                    <option value="">1984</option>
+                    <option value="">1983</option>
+                    <option value="">1982</option>
+                    <option value="">1981</option>
+                    <option value="">1980</option>
+                </select> 년
+                <select name="month" id="month">
+                    <option value="">선택</option>
+                    <option value="">01</option>
+                    <option value="">02</option>
+                    <option value="">03</option>
+                    <option value="">04</option>
+                    <option value="">05</option>
+                    <option value="">06</option>
+                    <option value="">07</option>
+                    <option value="">08</option>
+                    <option value="">09</option>
+                    <option value="">10</option>
+                    <option value="">11</option>
+                    <option value="">12</option>
+                </select> 월
+                <select name="day" id="day">
+                    <option value="">선택</option>
+                    <option value="">01</option>
+                    <option value="">02</option>
+                    <option value="">03</option>
+                    <option value="">04</option>
+                    <option value="">05</option>
+                    <option value="">06</option>
+                    <option value="">07</option>
+                    <option value="">08</option>
+                    <option value="">09</option>
+                    <option value="">10</option>
+                    <option value="">11</option>
+                    <option value="">12</option>
+                    <option value="">13</option>
+                    <option value="">14</option>
+                    <option value="">15</option>
+                    <option value="">16</option>
+                    <option value="">17</option>
+                    <option value="">18</option>
+                    <option value="">19</option>
+                    <option value="">20</option>
+                    <option value="">21</option>
+                    <option value="">22</option>
+                    <option value="">23</option>
+                    <option value="">24</option>
+                    <option value="">25</option>
+                    <option value="">26</option>
+                    <option value="">27</option>
+                    <option value="">28</option>
+                    <option value="">29</option>
+                    <option value="">30</option>
+                    <option value="">31</option>
+                </select> 일
+            </li>
+            <li>
+                <h4>성별</h4>
+                <label for="Gender1"><input type="radio" name="Gender" id="Gender1" checked> 여자</label>
+                <label for="Gender2"><input type="radio" name="Gender" id="Gender2"> 남자</label>
+            </li>
+            <li>
+                <ul class="interest">
+                    <li>
+                        <h4>관심분야 <br><span>*복수선택가능</span></h4>
+                    </li>
+                    <li>
+                        <label for="check01"><input type="checkbox" id="check01">스포츠</label>
+                        <label for="check02"><input type="checkbox" id="check02">부동산</label>
+                        <label for="check03"><input type="checkbox" id="check03">영화</label>
+                        <label for="check04"><input type="checkbox" id="check04">여행</label>
+                        <label for="check05"><input type="checkbox" id="check05">웹툰</label><br>
+                        <label for="check06"><input type="checkbox" id="check06">도서</label>
+                        <label for="check07"><input type="checkbox" id="check07">게임</label>
+                        <label for="check08"><input type="checkbox" id="check08">요리</label>
+                        <label for="check09"><input type="checkbox" id="check09">경제</label>
+                        <label for="check10"><input type="checkbox" id="check10">패션</label>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h4>추천인 아이디</h4>
+                <input type="text">
+            </li>
+        </ul>
+    </fieldset>
+    <fieldset>
+        <legend>약관 동의</legend>
+        <ul class="contract_list">
+            <li>
+                <input type="checkbox" id="all"><label for="all">전체 약관 동의</label><br>
+            </li>
+            <li>
+                <div class="contract_box">
+                    <input type="checkbox" id="contract1"><label for="contract1">약관1</label><br>
+                    <div class="text_box">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel eum quis cupiditate assumenda, adipisci maiores facere quae provident asperiores esse laudantium vitae praesentium necessitatibus dolore sunt! Rerum odio in voluptas minima expedita, dolorem, error explicabo quia quisquam officia alias blanditiis voluptates iure aut mollitia atque eum. Officiis sequi culpa quod?
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="contract_box">
+                    <input type="checkbox" id="contract2"><label for="contract2">약관2</label><br>
+                    <div class="text_box">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, dolor temporibus ab sit nisi officiis possimus, eos fugit dolorem reiciendis aliquam accusantium eaque, tempore eum quam nostrum ex! Quibusdam ipsam ut deleniti dignissimos est provident consectetur suscipit laudantium maiores sed, vitae distinctio eum nam sunt incidunt vero odit molestias iusto.
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </fieldset>
+
+    <div class="button_box">
+        <button>가입</button>
+        <button>취소</button>
+    </div>
+
+    
+    </div>
+</form>
+
+</body>
+</html>

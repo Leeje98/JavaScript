@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - while문 (무한루프를 돌때 많이 사용한다) / do-while문 </title>
+    <script>
+
+/*
+// 1부터 10까지 출력
+    let cnt = 1;
+
+    while(cnt <=10) {
+        document.write(cnt + '번째 출력', '<br>');
+        cnt++;
+    }
+*/
+
+
+/*     
+let cnt = 1;
+let num = 1;
+
+// 1은 참이고 0은 거짓, TRUE / FALSE 이라 본다.  
+// while(1)은 항상 참이기 때문에 while문 안에 있는 코드들이 무한루프를 돌게 된다
+// while(0)은 그 반대로 while문 안의 코드가 실행되지 않는다.
+while(1) {    
+    document.write(cnt +'번째 출력','<br>'); 
+    if(num>=10) break;
+    num +=1; 
+}
+*/
+
+
+/*
+// do-while문
+let cnt= 6;
+do {
+    document.write(cnt + '번째 출력', '<br>');
+    cnt++;
+} while(cnt <=5)
+*/
+
+
+// while문과 do-while문의 차이점 :
+// while문은 조건을 따져 본다음에 출력을 할지 결정하고, 
+// do-while문은 일단 출력부터 한번 한 다음에 조건을 따져서 (cnt <=5)/5보다 작으면 출력해라/ 라고 입력해도 조건에 맞지 않는 6이 출력이 된다
+
+
+
+
+
+
+//30보다 작거나 같을 숫자중 2의 배수 출력하기 
+
+let cnt = 0;
+
+while(1) {    
+    document.write(cnt ,'<br>'); 
+    if(cnt>=30) break;
+    cnt+=2;
+}
+
+
+    
+
+
+
+    </script>
+
+    <style>
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

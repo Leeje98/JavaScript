@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+
+        // private : 클래스 사용자가 클래스의 속성을 의도하지 않은 값, 또는 방향으로 사용하는 것을 막기 위한 것
+        // ㄴ속성과 메소드에 모두 사용, 문자열 앞에 #을 붙여 표현, 등록하기전 미리 선언
+        // ㄴ외부에서 private속성에 절대 접근할수 없음. => 확인, 수정 불가능
+
+        /*
+        class Square {
+            constructor(length) {
+
+                 if(length <= 0) {
+                     throw `길이는 0보다 커야함`
+                     //ㄴthrow : 강제로 예외를 일으키는 명령어 / 콘솔창에 나타나는 오류메세지
+                     //ㄴthrow : 사용자 정의 예외를 발생(throw)할 수 있습니다. 
+                     //          예외가 발생하면 현재 함수의 실행이 중지되고 throw 이후의 명령문은 실행되지 않습니다.
+                     //          제어 흐름은 콜스택의 첫 번째 catch 블록으로 전달됩니다. 
+                     //          호출자 함수 사이에 catch 블록이 없으면 프로그램이 종료됩니다. }}
+                 }
+
+                this.length = length
+            }
+            getPerimeter() {
+                return this.length * 4
+            }
+
+            gerArea() {
+                return this.length * this.length
+            }
+        }
+
+        const square = new Square(5)
+        // square.length = -10
+        document.write(`정사각형의 둘레: ${square.getPerimeter()} <br>`)
+        document.write(`정사각형의 넓이: ${square.getArea()}`)
+        */
+        
+
+        
+        class Square {
+
+            #length // private기능 부여
+            constructor(length) {
+
+                if(length <= 0) {
+                    throw `길이는 0보다 커야함`
+                    //ㄴthrow : 강제로 예외를 일으키는 명령어 / 콘솔창에 나타나는 오류메세지
+                }
+
+                this.#length = length
+            }
+            getPerimeter() {
+                return this.#length * 4
+            }
+
+            getArea() {
+                return this.#length * this.#length
+            }
+        }
+
+        const square = new Square(5)
+        square.length = -10
+        document.write(`정사각형의 둘레 : ${square.getPerimeter()} <br>`)
+        document.write(`정사각형의 넓이 : ${square.getArea()}`)
+        
+
+    </script>
+
+    
+    <style>
+        
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

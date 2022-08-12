@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+
+    // 오버라이드(override) : 부모가 가지고 있는 함수를 자식이 재선언하여 덮어쓰는 것
+
+        class Information {
+            constructor(name) {
+                this.name = name
+            }
+
+            myHobby() {
+                document.write('나의 취미는 영화감상입니다!! <br>')
+            }
+
+            myHealth() {
+                document.write('매우 건강합니다!! <br>')
+            }
+
+        }
+    
+        const information = new Information('홍길동')
+        information.myHobby()
+        information.myHealth()
+
+        class Child extends Information {
+            constructor(name, weight) {
+                super(name)
+                this.weight = weight
+            }
+
+            myHealth() {
+                document.write(`나는 몸무게 ${this.weight}으로 저체중입니다!!!`)
+            }
+        }
+
+        const child = new Child('윤동주', 40)
+        child.myHobby()
+        child.myHealth()
+
+
+
+
+
+
+    </script>
+
+    
+    <style>
+        
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

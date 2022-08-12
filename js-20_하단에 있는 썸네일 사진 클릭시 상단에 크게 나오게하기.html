@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            let mainImg = document.querySelector('.main_img > img')
+            let thumImg = document.querySelectorAll('.thum_img > img')
+
+            for(let i=0; i<thumImg.length; i++) {
+                thumImg[i].onclick = mainBox
+            }
+
+            function mainBox() {
+                let newImg = this.src
+                mainImg.setAttribute('src', newImg)
+            }
+
+        })
+
+
+    </script>
+
+    
+    <style>
+
+        * {margin: 0; padding: 0;}
+        img {display: block;}
+
+        .container {
+            width: 320px;
+            border: 1px solid #333;
+            padding: 10px;
+        }
+
+        .main_img {
+            width: 320px;
+            height: 320px;
+            margin-top: 10px;
+        }
+
+        .main_img img {
+            width: 100%;
+        }
+
+        .thum_img {
+            width: 320px;
+            height: 100px;
+            display: flex;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .thum_img img:nth-child(2) {
+            margin: 0 10px;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>이미지교체</h2>
+        <div class="main_img">
+            <img src="./img/new01_off.jpg" alt="">
+        </div>
+
+        <div class="thum_img">
+            <img src="./img/new01_off.jpg" alt="">
+            <img src="./img/new02_off.jpg" alt="">
+            <img src="./img/new03_off.jpg" alt="">
+        </div>
+
+    </div>
+    
+</body>
+</html>

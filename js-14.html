@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+
+        /*
+        let num = parseInt(Math.random() * 10 + 1) 
+                         // Math.random : 0 ~ 1 사이의 무작위 수 추출 (소수값으로 나옴)
+                         // parseInt : 값을 정수로 변환 (소수점 이하 버림)
+                         // 0 ~ 1 '사이' 라서 10을 곱해도 절대 10이라는 값이 나올수 없다 (최대 9.9----) 
+                                  // ㄴ--그래서 1을 더해준다 (1 ~ 10 정수 출력가능)
+
+        document.write(num)
+        */
+
+
+        // Math.random() 함수를 사용하여 가위바위보 프로그램을 작성하시오.   --- 문제풀기
+
+
+        // let scissor = parseInt(1) 
+        // let rock = parseInt(2) 
+        // let paper = parseInt(3) 
+
+        // let user = prompt('가위 바위 보 게임을 진행합니다', )
+        
+
+
+        // 아이디를 입력 받아 일치 여부를 판별하는 조건문을 작성. (단, 대소문자 구분 없이 스펠링만 일치하면 패스)   --- 문제풀기
+
+
+
+
+        const today = new Date()
+        const openDay = new Date('2022-2-28')
+        // const setDay = new Date(openDay.setFullYear('2023'))
+        const year = today.getFullYear()
+        const month = today.getMonth() + 1
+        const date = today.getDate()
+        const day = today.getDay()
+
+        // const count = openDay + today   ㄱ
+        // document.write(count, '<br>')  ---  내가 풀어본것
+
+        const result = Math.floor((today - openDay)/(1000*60*60*24))
+                // 개강일부터 며칠이나 지났나  -- 날짜와 숫자를 더할수는 없다
+                // 숫자 대신 밀리초로 계산 : 100(일을 계산) * 1000(초) * 60(분) * 60(시간) * 24(날짜(일))
+        document.write(result, '<br>')
+
+
+
+                // r-- future 오늘 날짜를 밀리초로 계산
+        const future = today.getTime() + (100 * 1000*60*60*24)
+        const someDay = new Date(future)
+        document.write(someDay, '<br>')
+
+        const someYear = someDay.getFullYear()
+        const someMonth = someDay.getMonth() + 1
+        const someDate = someDay.getDate()
+        document.write(`${someYear}년 ${someMonth}월 ${someDate}일<br>`)
+
+
+
+
+
+
+        
+        switch(day) {
+            case 0 : dayName = '일요일'; break;
+            case 1 : dayName = '월요일'; break;
+            case 2 : dayName = '화요일'; break;
+            case 3 : dayName = '수요일'; break;
+            case 4 : dayName = '목요일'; break;
+            case 5 : dayName = '금요일'; break;
+            case 6 : dayName = '토요일'; break;
+        }
+
+        const hours = today.getHours()
+
+
+
+        document.write(today, '<br>')
+        document.write(openDay, '<br>')
+        // document.write(setDay, '<br>')
+        document.write(year, '<br>')
+        document.write(month, '<br>')
+        document.write(date, '<br>')
+        document.write(dayName, '<br>')
+
+        
+
+
+
+
+    </script>
+
+    
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const welcome = document.querySelector('.welcome')
+            const bye = document.querySelector('.bye')
+            const txt = document.querySelector('.text')
+
+            welcome.addEventListener('click', function(){
+                document.querySelector('.text').style.Color = 'red'
+                // txt.innerText = '방문을 환영합니다~'  // txt.innerText:텍스트만 넣어주는 기능
+                txt.innerHTML = '방문을 환영합니다~'     // txt.innerHTML:한칸 이상 띄어지는 스페이스나 엔터까지 인식이 되는..
+            })
+
+            bye.addEventListener('click', function(){
+                document.querySelector('.text').style.Color = 'blue'
+                // txt.innerText = '다음에 또 오세요~'
+                txt.innerHTML = '다음에 또 오세요~'
+            })
+
+
+        })
+
+
+
+
+
+    </script>
+
+    
+    <style>
+
+        .text {
+            width: 300px; height: 200px;
+            background-color: #ccc;
+            border: 1px solid black;
+            margin: 10px;
+            text-align: center;
+            line-height: 200px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+
+    <button class="welcome">welcome</button>
+    <button class="bye">Bye</button>
+
+    <div class="text">버튼을 눌러주세요</div>
+    
+</body>
+</html>

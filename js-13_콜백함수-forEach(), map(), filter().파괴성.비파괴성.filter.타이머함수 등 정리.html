@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javaScript_Function_2</title>
+    <script>
+
+        // 콜백 함수 : 함수의 매개변수로 사용되는 함수
+
+        // 배열이 가지고 있는 콜백함수 : forEach(), map(), filter()
+
+        // forEach(function(value, index, array)) : 단순히 배열요소를 사용하는 함수
+
+        /*
+        const numbers = [23, 5, 42, 67, 57, 92, 16]
+
+        numbers.forEach(function(value, index, array){
+            document.write(`${index} - ${value} <br>`)
+        })
+        */
+        
+
+        // map(function(value, index, array)) : 콜백함수에서 리턴하는 값들을 기반으로 새로운 배열을 만드는 함수
+
+        // 파괴성 메모리 vs 비파괴성 메모리
+
+        /*
+        const numbers = [23, 6, 42, 67, 57, 92, 16]   // const 사용불가, let사용
+
+        // const numbersMap = numbers.map(function(value){
+        //     return value * value
+        // })
+
+        const numbersMap = numbers.map((value) => value * value )
+
+        // for (let value of numbersMap) {
+        //     document.write(value, '<br>')
+        // }
+
+        numbersMap.forEach(function(value){
+            document.write(value, '<br>')
+        })
+        */
+
+        /*
+        // filter(function(value, index, array)) : 콜백함수에서 리턴되는 값중 true인 값을 이용해서 새로운 배열로 만드는 함수
+
+        const numbers = [0, 1, 2, 3, 4, 5, 6]
+
+        // const evenNumbers = numbers.filter(function(value){
+        //     return value % 2 == 0 
+        // })
+
+        const evenNumbers = numbers.filter ((value) => value % 2 == 0 )
+
+
+
+        // evenNumbers.forEach(function(value){
+        //     document.write(value, '<br>')
+        // })
+
+        evenNumbers.forEach((value) => document.write(value, '<br>'))
+        */
+
+
+
+        // 타이머함수
+        // setInterval(함수, 시간) : 특정 시간마다 함수를 호출해서 실행
+        // setTimeout(함수, 시간) : 특정 시간후에 함수를 한번 호출해서 실행
+
+        /*
+        setTimeout(() => {
+            document.write('1초 후에 실행 <br>')
+        }, 1000);
+
+        let count = 0
+        let time = setInterval( () => {
+            document.write(`1초마다 실행 - ${count}<br>`)
+            count++
+            if(count == 6) clearInterval(time)
+        }, 1000)
+        
+        */
+       
+        /*
+        let count = 1
+        let time = setInterval( () => {
+            document.write(`1초마다 실행 - ${count}<br>`)
+            count++
+        }, 1000)
+
+        setTimeout( () => {
+            document.write('타이머종료')
+            clearInterval(time)
+        }, 5600)
+        */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

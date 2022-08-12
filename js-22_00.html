@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            /*
+            //아이디로 찾기
+            document.getElementById('아이디');
+
+            //클래스명으로 찾기
+            document.getElementsByClassName('클래스명');
+
+            //태그이름으로 찾기
+            document.getElementsByTagName('태그이름');
+
+            //CSS Selector로 찾기 (강추)
+            //id 찾을때는 앞에 #, Class로 선택시 앞에 .
+            document.querySelector('CSS Selector(태그명)'); //한개만 존재하는 경우
+            document.querySelectorAll('CSS Selector'); //여러개가 존재하는 경우
+            */
+
+                                            // r-- addEventListener : document의 특정요소(Id,class,tag 등등..)에 event를 등록할 때 사용
+            document.querySelector('.btn').addEventListener('click', function(){
+
+                let newP = document.createElement('p')
+                                       // ㄴ-- createElement : 요소 노드를 생성
+                let colorName = document.querySelector('.color_name')
+                                            // .color_name 를 찾는다 (여기선 인풋 텍스트박스의 내용)
+                let newTxt = document.createTextNode(colorName.value)
+                                            // ㄴ-- 텍스트 노드를 생성 (여기서 텍스트 내용 : 위에 선언한 변수 colorName의 값(인풋 텍스트박스의 내용))
+                newP.appendChild(newTxt)
+                       // appendChild : 선택한 요소 안에 자식요소를 추가한다.  | 객체에 노드를 연결
+                       //  ㄴ-- (여기선 newTxt(인풋 텍스트박스의 내용)을 newP의 자식으로 등록하겠다):<p>태그의 내용(자식)으로 등록 
+
+
+                let newSpan = document.createElement('span')
+                let spanTxt = document.createTextNode('X')
+                
+                newSpan.appendChild(spanTxt)                  // spanTxt를 newSpan의 자식으로 등록
+                newSpan.setAttribute('class', 'delete')       // class명을 '.delete'으로 정함
+                newP.appendChild(newSpan)                     // newP의 자식으로 newSpan 등록
+                                                              // 3개가 한세트
+
+
+                let colorList = document.querySelector('.color_list')
+
+                // colorList.appendChild(newP)  //appendChild:뒤에 추가
+
+                colorList.insertBefore(newP, colorList.childNodes[0])
+                            // ㄴ- insertBefore : 앞에 추가 // ㄴ-- colorList.childNodes[0]: 어디 앞에 추가 할지 모르니 리스트의 0번으로 추가하겠다 (최신 파일 상단 노출 방식)
+                colorName.value = ''  
+                // 인풋 내용 등록하고 나면 클리어 하는 기능
+
+                let delBtns = document.querySelectorAll('.delete')
+                                        // ㄴ-- 등록된 값들 중에(여러개) 찾아야 되는값이라 querySelector'All' 사용, 순번(인덱스)값으로 객체 지정
+
+                for(let i=0; i<delBtns.length; i++) {   // i의 전체 값 출력    
+                    delBtns[i].addEventListener('click', function() {   //여기서 i는 전체 i중 내가 클릭한 i
+                        if(this.parentNode.parentNode) {   // 나의 부모의 부모가 존재한다면
+                            this.parentNode.parentNode.removeChild(this.parentNode)  // 나의 부모의 부모의 자식중 내부모를 지워라
+                        }
+                    })
+                }
+            })
+        })
+
+
+    </script>
+
+    
+    <style>
+
+        .delete {
+            margin-left: 100px;
+            cursor: pointer;
+            opacity: 0.5;
+        }
+
+        .delete:hover {
+            opacity: 1;
+            font-weight: bold;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <h3>컬러 차트</h3>
+
+    <form action="">
+        <input type="text" class="color_name" placeholder="이름" autofocus>
+        <button type="button" class="btn">추가</button>
+    </form>
+    <hr>
+    <div class="color_list"></div>
+    
+</body>
+</html>

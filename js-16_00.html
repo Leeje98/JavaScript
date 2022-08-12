@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {    
+
+        // document.querySelector('.openBtn').onclick = showBox
+        // document.querySelector('.closeBtn').onclick = hiddenBox
+
+        const openBtn = document.querySelector('.openBtn')
+        const closeBtn = document.querySelector('.closeBtn')
+
+        openBtn.onclick = showBox
+        closeBtn.onclick = hiddenBox
+
+
+
+
+        function showBox() {
+                document.querySelector('.box01').style.display = 'block'
+                document.querySelector('.box01').style.backgroundColor = 'yellow'
+            }
+
+        function hiddenBox() {
+                document.querySelector('.box01').style.display = 'none'
+            }
+
+        })
+        
+
+        
+        
+
+
+    </script>
+
+    <style>
+        .box01 {
+            width: 300px; height: 200px;
+            border: 1px solid #333;
+            background-color: #ccc;
+            text-align: center; line-height: 200px;
+            font-size: 30px;
+            display: none;
+        }
+    </style>
+    
+</head>
+<body>
+    
+    <button class="openBtn">Show</button>
+    <button class="closeBtn">Hidden</button>
+
+    <div class="box01">Text_box01</div>
+
+
+
+
+
+
+
+
+</body>
+</html>

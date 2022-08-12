@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+
+// --- class-01.html파일에서 이어지는 내용의 최종판. 이 방식이 찐이다
+
+
+    function createResult(name, kor, eng, mat) {
+        return {
+            name:name,
+            kor: kor,
+            eng: eng,
+            mat: mat,
+
+            getSum() {
+                return this.kor + this.eng + this.mat
+            },
+
+            getAver() {
+                return (this.getSum()/3).toFixed(2)
+            },
+
+            output() {
+                return `${this.name}, ${this.kor}, ${this.eng},  ${this.mat},  ${this.getSum()}, ${this.getAver()} `
+            }
+        }
+    }
+
+    const results = []
+
+    results.push(createResult('kim', 90, 90, 100))
+    results.push(createResult('lee', 80, 80, 100))
+
+    results.forEach( (result) => {
+        document.write(result.output(), '<br>')
+    })
+
+
+
+
+    </script>
+
+    
+    <style>
+        
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const h1 = document.querySelector('h1')
+            const textArea = document.querySelector('textarea')
+
+            textArea.addEventListener('keyup', () => {   // keydown(키보드 키를 누르는 순간), keypress(키보드 키를 누르고 있는 순간), keyup(키보드 키에서 손을 떼는 순간)
+                const length = textArea.value.length
+
+                h1.textContent = `글자 수 : ${length} 자`  // 영어나 숫자는 상관없지만 한글(조합문자)에선 글자수 인식에서 오류가 발생한다
+             })
+
+        })
+
+
+    </script>
+
+    
+    <style>
+        
+    </style>
+</head>
+<body>
+
+    <h1></h1>
+    <textarea></textarea>
+    <!-- textarea : textbox와 달리 여러줄의 텍스트를 입력할수 있는 양식 -->
+    
+</body>
+</html>

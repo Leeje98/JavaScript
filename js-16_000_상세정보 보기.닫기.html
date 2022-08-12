@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const openBtn = document.querySelector('.openBtn')
+        const closeBtn = document.querySelector('.closeBtn')
+
+        openBtn.onclick = showEvent
+        closeBtn.onclick = hiddenEvent
+
+        
+        function showEvent() {
+            document.querySelector('.event_text_box').style.display = 'block'
+        }
+
+        function hiddenEvent() {
+            document.querySelector('.event_text_box').style.display = 'none'
+        }
+
+        document.querySelector('.p1').style.color = 'green'
+        document.querySelector('.p2').style.fontWeight = 'bold'
+        document.querySelector('.p3').style.fontStyle = 'italic'
+        document.querySelector('.p3').style.color = 'gray'
+
+
+
+        const openBtn_02 = document.querySelector('.openBtn_02')
+        const closeBtn_02 = document.querySelector('.closeBtn_02')
+
+        openBtn_02.onclick = showEvent_02
+        closeBtn_02.onclick = hiddenEvent_02
+
+        function showEvent_02() {
+            document.querySelector('.Information').style.display = 'block'
+            document.querySelector('.openBtn_02').style.display = 'none'
+            document.querySelector('.closeBtn_02').style.display = 'block'
+        }
+
+        function hiddenEvent_02() {
+            document.querySelector('.Information').style.display = 'none'
+            document.querySelector('.closeBtn_02').style.display = 'none'
+            document.querySelector('.openBtn_02').style.display = 'block'
+        }
+
+
+
+
+        // const Btn_03 = document.querySelector('.Btn_03')
+
+        // Btn_03.addEventListener('click', function(){
+        //     document.querySelector('.Information_03').style.display = 'block'
+        //     Btn_03.innerHTML = '작품설명 닫기'
+        // })
+
+        // Btn_03.addEventListener('click', function(){
+        //     if (document.querySelector('.Information_03').style.display = 'none') {
+        //     document.querySelector('.Information_03').style.display = 'block'
+        //     Btn_03.innerHTML = '작품설명 닫기'} else if (document.querySelector('.Information_03').style.display = 'block') {
+        //     document.querySelector('.Information_03').style.display = 'none'
+        //     Btn_03.innerHTML = '작품설명 열기'    
+        //     }
+        // })
+
+
+    })
+        
+    </script>
+
+    <style>
+        
+        .sec_01 h3 {
+            margin-left: 20px;
+            font-size: 25px;
+        }
+
+        .sec_01 .outer_box {
+            display: flex;
+            width: 800px; height: 300px;
+
+            border: 1px solid #333;
+        }
+
+        .sec_01 .outer_box h5 {
+            font-size: 20px;
+            color: green;
+            line-height: 20px;
+            margin: 15px 0;
+        }
+
+        .sec_01 .outer_box .img_box {
+            width: 300px; 
+            height: 300px;
+            overflow: hidden;
+            flex: 1;
+            
+            border: 1px solid #333;
+        }
+
+        .sec_01 .outer_box .img_box img {
+            width: 100%;
+        }
+
+        .sec_01 .outer_box .text_box {
+            flex: 1;
+            padding: 0 20px;
+        }
+
+        .sec_01 .Flavor_Note_box .tilt_box {
+            display: flex;
+        }
+
+        .sec_01 .Flavor_Note_box .tilt_box h5 {
+            margin-right: 20px;
+        }
+
+        .sec_01 .Flavor_Note_box .tilt_box button {
+            height: 20px;
+            margin: 15px 5px 0;
+            line-height: 20px;
+            
+        }
+
+
+        .sec_01 .Flavor_Note_box .event_text_box {
+            display: none;
+        }
+
+
+
+        .sec_02 .Information {
+            display: none;
+            width: 300px;
+        }
+
+        .sec_02 .closeBtn_02 {
+            display: none;
+        }
+
+        .sec_03 .Information_03 {
+            display: none;
+            width: 300px;
+        }
+
+    </style>
+    
+</head>
+<body>
+
+    <section class="sec_01">
+        
+        <h3>샌드위치 유래</h3>
+
+        <div class="outer_box">
+            <div class="img_box">
+                <img src="./img/220px-Sandwich_0.jpg" alt="">
+            </div>
+            <div class="text_box">
+                <div class="Information_box">
+                    <h5>Information</h5>
+                    <p> 오늘날 같은 형태의 <span class="p1">샌드위치</span>가 개발 된 것은 18세기 영국에서 비롯되었다. 18세기 공무에 빠져있던 영국 샌드위치 가문의 4대 백작인 <span class="p2">존 몬태규 백작</span>(1718년~1792년)을 위해 <span class="p3">하인이 일하면서 먹을 수 있는 음식</span>을 개발하게 되었고, 빵에 채소, 고기를 끼워넣어 먹을 수 있게 하였다.</p>
+                </div>
+                <div class="Flavor_Note_box">
+                    <div class="tilt_box">
+                        <h5>Flavor Note</h5>
+                        <button class="openBtn">더보기</button>
+                        <button class="closeBtn">닫기</button>
+                    </div>
+                    <p class="event_text_box">빵에 채소, 고기를 끼워넣어 먹을 수 있게 한 음식</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="sec_02">
+
+        <h3>별이 빛나는 밤</h3>
+
+        <div class="outer_box">
+            <div class="img_box">
+                <img src="./img/star_night.jpg" alt="">
+            </div>
+            <div class="text_box">
+                <div class="Information_box">
+                    <p class="Information">《별이 빛나는 밤》은 네덜란드의 화가 빈센트 반 고흐의 가장 널리 알려진 작품이자 정신병을 앓고 있을 당시 고흐가 그린 그림이다. 1889년 생 레미의 정신병원에서 고흐는 정신적 질환으로 인한 고통을 떠올려 그림 속의 소용돌이로 묘사했다.</p>
+                    <button class="openBtn_02">작품설명 열기</button>
+                    <button class="closeBtn_02">작품설명 닫기</button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- <section class="sec_03">
+
+        <h3>별이 빛나는 밤</h3>
+
+        <div class="outer_box">
+            <div class="img_box">
+                <img src="./img/star_night.jpg" alt="">
+            </div>
+            <div class="text_box">
+                <div class="Information_box">
+                    <p class="Information_03">《별이 빛나는 밤》은 네덜란드의 화가 빈센트 반 고흐의 가장 널리 알려진 작품이자 정신병을 앓고 있을 당시 고흐가 그린 그림이다. 1889년 생 레미의 정신병원에서 고흐는 정신적 질환으로 인한 고통을 떠올려 그림 속의 소용돌이로 묘사했다.</p>
+                    <button class="Btn_03">작품설명 열기</button>
+                </div>
+            </div>
+        </div>
+
+    </section> -->
+
+    
+    
+
+    
+
+
+
+
+
+
+
+</body>
+</html>

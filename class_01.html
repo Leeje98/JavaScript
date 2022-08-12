@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+
+    /*
+        const results = {
+            name: 'kim', 
+            kor: 90, 
+            eng: 90,
+            mat: 100,                    //results 라는 배열을 모두 객체로 등록시켜서 쓰는 방법.
+
+            sum: function() {
+                document.write('sum=', this.kor + this.eng + this.mat, '<br>')
+                // 명령어가 불렀을때 실행 되어야하는 내용  --- 화면에 총합 나타내기
+            },
+
+            aver: function() {
+                document.write('aver=', (this.kor + this.eng + this.mat)/3)
+                // 명령어가 불렀을때 실행 되어야하는 내용  --- 화면에 평균 나타내기
+            }
+        }
+
+        results.sum()
+        results.aver()                  // 각각의 평션을 호출하는 명령어
+    */
+    
+
+    /*
+        function results(name, kor, eng, mat) {
+            this.name = name,                       // this가 붙었으므로 나의.--- 나의 name(배열에 속해 있는)
+            this.kor = kor,
+            this.eng = eng,
+            this.mat = mat, 
+            this.sum = sum,                         // 배열안엔 없지만 밑에 평션으로 정의해 준다
+            this.aver = aver
+        }
+
+        function sum() {
+            return this.kor + this.eng + this.mat
+        }
+
+        function aver() {
+            return (this.sum() / 3).toFixed(2)       //---------------------(내용).toFixed(2) : 내용을 소숫점 (2)번째 까지만 노출--------------
+        }
+
+        const kim = new results('kim', 90, 90, 100)        // 위의 function results에 대입할 배열 생성 : 새로 만든 배열이라 new 를 달아준다
+        const lee = new results('lee', 100, 90, 80)
+
+        document.write(`sum = ${kim.sum()} <br>`)          // 대입하여 출력하는 명령어
+        document.write(`aver = ${kim.aver()} <br>`)
+        
+        document.write(`sum = ${lee.sum()} <br>`)
+        document.write(`aver = ${lee.aver()} <br>`)
+    */
+
+    /*
+    const results = []
+
+    results.push({name: 'kim', kor: 90, eng: 90, mat: 100})           // 배열 자체가 객체로 인식되어 배열의 요소로 등록된다  -- 얘가 results[0]
+    results.push({name: 'lee', kor: 100, eng: 100, mat: 80})          // -- 얘가 results[1]
+         // push() : 배열의 끝에 하나 이상의 요소를 추가하고, 배열의 새로운 길이를 반환합니다.  -- 위에 생성한 빈 배열 안에 내용 추가
+
+    // console.log(JSON.stringify(results, null, 2))
+                //ㄴ--JSON.stringify() 메서드는 JavaScript 값이나 객체를 JSON 문자열로 변환합니다. 
+                //선택적으로, replacer를 함수로 전달할 경우 변환 전 값을 변형할 수 있고, 배열로 전달할 경우 지정한 속성만 결과에 포함합니다.
+
+    document.write(`${results[0].name}, ${results[0].kor}, ${results[0].eng}, ${results[0].mat} <br>`)
+                     // results[0]의 값들 출력  //*지정출력
+
+    results.forEach( (result) => {
+
+        const sum = result.kor + result.eng + result.mat
+        const aver = sum/3
+
+        document.write(`${result.name}, ${result.kor}, ${result.eng}, ${result.mat} <br>`)   
+        document.write(`${result.name}, sum = ${sum}, aver = ${aver} <br>`)
+                                                                                 //*전체출력
+    })
+    */
+    
+
+    /*
+    const results = []
+
+    results.push({name: 'kim', kor: 90, eng: 90, mat: 100})
+    results.push({name: 'lee', kor: 100, eng: 100, mat: 80})
+
+    function getSum(results) {
+        return results.kor + results.eng + results.mat
+    }
+
+    function getAver(results) {
+        return getSum(results) / 3
+    }
+
+    // r배열   r배열에 쓰이는 명령어  r(result) 배열속 요소  -- 배열속의 요소를 forEach로 돌린다  -- 돌리니까 순서대로 전부가 출력됨
+    results.forEach( (result) => {
+        document.write(`${result.name}, ${getSum(result)}, ${getAver(result)} <br>`)
+    })
+    */
+    
+
+
+    /*
+    const results = []
+
+    results.push({name: 'kim', kor: 90, eng: 90, mat: 100})
+    results.push({name: 'lee', kor: 100, eng: 100, mat: 50})
+
+    results.forEach( (result) => {
+        result.getSum = function() {
+            return result.kor + result.eng + result.mat
+        }
+
+        result.getAver = function() {
+            return result.getSum()/3
+        }
+    })
+
+    results.forEach( (result) => {
+        document.write(`${result.name}, ${result.getSum()}, ${result.getAver()} <br>`)
+    })
+    */
+
+
+
+
+
+    </script>
+
+    
+    <style>
+        
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

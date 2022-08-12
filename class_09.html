@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+
+    class triangle {
+        constructor(length1, length2, length3) {
+            this.length1 = length1
+            this.length2 = length2
+            this.length3 = length3
+        }
+
+        getPerimeter() {
+            return this.length1 + this.length2 + this.length3
+        }
+    }
+
+    const Length = new triangle(15, 20, 25)
+    document.write(`삼각형 둘레 길이 : ${Length.getPerimeter()} <br><br>`)
+
+    class equilateral extends triangle {
+        constructor(size) {
+            super(size, size, size)
+        }
+
+        getEquilateral() {
+            return this.size * 3
+        }
+    }
+
+    const Equilateral = new equilateral(12)
+    document.write(`정삼각형의 둘레 길이 : ${Equilateral.getEquilateral()}`)
+    // console.log(`정삼각형의 둘레 길이 : ${Equilateral.getEquilateral()}`)
+
+
+
+    </script>
+
+    
+    <style>
+        
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

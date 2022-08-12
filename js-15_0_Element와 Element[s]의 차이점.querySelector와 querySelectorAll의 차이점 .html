@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script src="./js-15_0.js" defer></script>
+                        <!-- ㄴ--defer : 스크립트를 상위에 넣었을때 실행시킬수 있게 해준다 -->
+    
+
+    <script>
+
+        //window.onload = function() { }  // 윈도우 전체가 로딩 되었을때 펑션안에 있는걸 실행시킨다(로딩이 조금 오래 걸림)
+
+                    //rr 닫는 바디태그 위에 쓰지않고 스크립트를 위에 쓰려면 이렇게 한겹 더 싸주고 써준다    // 도큐먼트만 로딩 되었을때 바로 실행시킨다(로딩이 빠르게 됨)
+        document.addEventListener('DOMContentLoaded',() => {
+
+            document.getElementById('box01').style.color = 'blue'
+            document.getElementById('box01').style.fontSize = '24px'
+                                 // Id 태그는 오로지 본인만 관여할수 잇다(자식 지정 안됨)
+
+            document.getElementsByClassName('box02')[0].style.color = 'red'
+                   //getElement[s]ByClassName: s가 붙으면 배열로 인식한다 - 하나밖에 없는 클래스명이기 때문에 인덱스번호 [0]을 넣어준다
+
+            document.getElementsByTagName('li')[1].style.color = 'blue'
+
+            document.querySelector('.box02').style.backgroundColor = 'gray'
+                     // querySelector : 하나만 가진 클래스일때
+
+            document.querySelectorAll('.box03 li')[0].style.fontSize = '24px'
+                                //All: 배열로 인식한다-- // querySelectorAll : li등 목록을 가진 클래스일때
+
+            let li = document.querySelectorAll('li')
+            // for(let i=0; i<li.length; i++) {
+            //     li[i].style.fontSize = '30px'
+            // }
+
+            // li.forEach(function(value){
+            //     value.style.fontSize = '50px'
+            // })
+            li.forEach((value) => {
+                value.style.fontSize = '50px'
+            })
+
+
+
+
+
+
+
+        })
+
+    </script>
+
+</head>
+<body>
+    
+    <div id="box01">Text_box01</div>
+    <div class="box02">Text_box02</div>
+    <ul class="box03">
+        <li>Text_Box03-1</li>
+        <li>Text_Box03-2</li>
+        <li>Text_Box03-3</li>
+    </ul>
+    
+
+    <!-- <script>  // 순차 처리하기때문에 노드를 먼저 인식하고 스크립트를 입히게 하려고 밑에(< / body>바로 위에) 넣는다
+        document.getElementById('box01').style.color = 'red'
+    </script> -->
+
+    <!-- <script src="./js-15.js"></script> -->
+
+</body>
+</html>

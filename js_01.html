@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+
+/*
+            const num1 = 15
+            const num2 = 2
+            //let result = 0
+
+        // result = num1 + num2
+        // document.write('더하기 :',result, '<br>')
+
+        // result = num1 - num2
+        // document.write('빼기 :', result)
+
+        const add = num1 + num2
+        const sub = num1 - num2
+
+        document.write('더하기 :', add, '<br>') //html tag 사용시 따옴표로 표기
+        document.write('빼기 :', sub)
+*/
+
+/*
+
+        // ID, PW 입력받아 출력
+
+        let userId = prompt('ID입력'); //prompt는 문자열로 입력받는 함수
+        let userPw = prompt('Password입력');
+
+        // alert(userId, userPw)
+*/
+
+/*
+        //사칙연산
+
+        let num1 = parseInt(prompt('첫번째 숫자 입력')) //parseInt() 문자데이터를 숫자데이터로 변환하는 함수
+        let num2 = parseInt(prompt('두번째 숫자 입력'))
+
+        let add = num1 + num2 
+
+        document.write('더하기 :', add, '<br>')
+*/
+
+/*
+        const num1 = 15
+        const num2 = 2
+        let result;
+
+        result = num1 + num2;
+        document.write(result, '<br>');
+        result = num1 - num2;
+        document.write(result, '<br>');
+        result = num1 * num2;
+        document.write(result, '<br>');
+        result = num1 / num2;
+        document.write(result, '<br>');
+        result = num1 % num2;
+        document.write(result)
+*/
+
+/*
+        const t1 = '학교종이';
+        const t2 = '땡땡땡';
+        const t3 = 8282;
+        const t4 = '어서모이자';
+        let result;
+
+        result = t1 +t2 + t3 + t4;
+        document.write(result);
+*/
+
+
+/*
+        //반지름을 입력받아 원주와 넓이를 입력
+
+        const radius = parseInt(prompt('원의 반지름 입력'))
+        const pi = 3.14
+
+        let area = pi*radius*radius
+        let circle = 2*pi*radius
+
+        document.write('원의 넓이 :', area, '<br>')
+        document.write('원의 둘레 :', circle)
+*/
+
+/*
+        //복합대입연산자
+
+         let num1 = 10;
+         let num2 = 3;
+
+         num1 += num2;
+         document.write(num1, '<br>');
+
+         num1 -= num2;
+         document.write(num1, '<br>');
+
+         num1 *= num2;
+         document.write(num1, '<br>');
+
+         num1 %= num2;
+         document.write(num1, '<br>');
+*/
+
+
+/*
+        //복합대입연산자를 이용한 테이블 만들기
+
+        let table = '<table border="1">'
+                table +='<tr>'
+                table +='<td>1</td>'
+                table +='<td>2</td>'
+                table +='<td>3</td>'
+                table +='</tr>'
+                table +='<tr>'
+                table +='<td>4</td>'
+                table +='<td>5</td>'
+                table +='<td>6</td>'
+                table +='</tr>'
+
+                document.write(table)
+*/
+
+/*
+        //max값 출력
+
+        let num1 = parseInt(prompt('첫번째 수'))
+        let num2 = parseInt(prompt('두번째 수'))
+
+        let max = (num1>num2) ? num1 : num2
+        let min = (num1<num2) ? num1 : num2
+
+        document.write('max =', max, '<br>')
+        document.write('min =', min)
+*/
+
+/*     
+        삼항연산자 - 3개의 항을 이용한 연산
+        조건식 ? 실행문(true) : 실행문(false)
+
+        
+        let a = 10
+        let b = 4
+        let c = 7
+        let max = 0
+
+        max = (a>b && a>c) ? a : ((b>a && b>c) ? b : c)
+
+        document.write("max =", max)
+*/
+
+
+
+
+//증감(1)연산자 --중요-- 
+    //결과값은 같지만 나를 먼저 표시하고 식을 처리할건지, 식을 처리하고나서 나를 표현하는지에 따라 값이 다르게 나온다
+
+/*
+        //<증감연산자>
+
+        let num1 = 10;
+        let num2 = 20;
+        let result 
+         num1--;               // r여기 출력값 :9 ---- 원본 10의 수 에서 num1--(num = 10-1)된값.
+        document.write(num1,'<br>'); 
+         num1++;               // r여기 출력값 :10 ---- 위에 계산되어 나왔던 수 9에서 num1++(num = 10+1)된값.    ----num1출력은 본인이 직접 출력되는 것이기 때문에 그대로 나옴
+        document.write(num1, '<br>');
+         result = num2++;      // r여기 출력값 :20 ----num2출력은 본인이 직접 출력되는 것이아니고 result에 대입해서 나온 출력값이다 / ++기호가 뒤에 달려있으므로 먼저 출력한 다음에 1을 증가시켜서 실제 num2 값은 현재 21이다.
+        document.write(result, '<br>');
+         result = ++num2;      // r여기 출력값 :22 ---- 윗줄에서 나온값 21에 ++되에 1증가된 값. / ++이 앞에 있기 때문에 증가먼저 시키고 result에 대입해서 나온 출력값이다. / ++기호가 앞에오냐 뒤에 오냐의 차이점 구별하기
+        document.write(result);
+*/
+
+/*
+        //<비교연산자>  결과값 true / false 로 출력
+        let a = 10;
+        let b = 20;
+        let c = 10;
+        let f = 20;
+        let result;
+
+        result = a > b;
+        document.write(result, '<br>');
+
+        result = a < b;
+        document.write(result, '<br>');
+
+        result = a <= b;
+        document.write(result, '<br>');
+
+        result = a == b;
+        document.write(result, '<br>');
+
+        result = a != b;
+        document.write(result, '<br>');
+
+        result = a === b;
+        document.write(result, '<br>');
+*/
+
+
+/*
+        //<논리연산자>
+
+        var a = 10;
+        var b = 20;
+        var m = 30;
+        var n = 40;
+        var result;
+
+        result = a>b || b>=m || m>n;
+        document.write(result,'', '<br>')
+        result = a>b || b>=m || m<=n;
+        document.write(result,'', '<br>')
+        result = a<=b && b>=m && m<=n;
+        document.write(result,'', '<br>')
+        result = a<=b && b<=m && m<=n;
+        document.write(result,'', '<br>')
+        result = !(a>b);
+        document.write(result,'')
+*/
+
+/*
+// 사칙연산-두 수를 입력받아 사칙연산을 계산하여 출력
+
+
+        let num1 = parseInt(prompt('첫번째 숫자 입력'))
+        let num2 = parseInt(prompt('두번째 숫자 입력'))
+
+        let add = num1 + num2
+
+        document.write('결과값 :', add)
+*/
+
+
+/*
+// 사칙연산-국어, 영어, 수학 점수를 선언하여 총점과 평균을 출력
+
+
+        let kor = 90
+        let eng = 45
+        let math = 28
+
+        let total = kor + eng + math
+        let aver = total / 3
+
+        document.write('총합 :', total, '<br>');
+        document.write('평균 :', aver)
+*/
+
+
+/*
+// 복합대입연산자 문제1-5개의 숫자를 입력받아 복합 대입연산자를 이용하여 합을 구하시오
+
+
+        // let num1 = parseInt(prompt('첫번째 숫자를 입력 하세요'))
+        // let num2 = parseInt(prompt('두번째 숫자를 입력 하세요'))
+        // let num3 = parseInt(prompt('세번째 숫자를 입력 하세요'))
+        // let num4 = parseInt(prompt('네번째 숫자를 입력 하세요'))
+        // let num5 = parseInt(prompt('다섯번째 숫자를 입력 하세요'))
+        // let result = (num1 + num2 + num3 + num4 + num5)
+
+        // document.write('총합 :', result)
+
+
+*/
+
+
+/*
+// 삼항연산자 문제1-하나의 정수를 입력받아 짝수와 홀수를 구분하시오
+
+
+        let num1  = parseInt(prompt('숫자를 입력하시오'))
+
+        let number = num1 % 2 
+
+        result = (number > 0)? '홀수' : '짝수'
+
+
+
+        document.write(result)
+*/
+
+/*
+// 삼항연산자 문제2-신장과 체중을 입력하여 적정 체중을 판단하시오
+
+
+        let num1  = parseInt(prompt('키를 입력해주세요'))
+        let num2  = parseInt(prompt('체중을 입력해주세요'))
+
+        let cm = num1 - 100
+        let kg = cm * 0.9
+
+        result = (num2 < cm * 0.9)? '저체중' : '과체중'
+
+        document.write(result)
+*/
+
+
+/*
+        let a = 'A'
+        let b = 'B'
+        let c;
+
+        c = !2 || 3 && !0;
+        document.write(c + '<br>');
+
+        c = a < b && a == b;
+        document.write(c + '<br>');
+
+        c = a < b || a == b;
+        document.write(c + '<br>');
+*/
+
+
+
+
+
+
+     </script>
+
+    <style>
+
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

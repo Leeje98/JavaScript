@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - function</title>
+
+
+    <script>
+
+/*
+    // 함수 선언부(정의영역)
+        function fun() {
+            let a = 1
+            let b = 2
+            let c = a + b
+            document.write('c = ', c)
+        }
+
+        fun()  //함수 호출 (불러주지 않으면 아무리 실행문안에 출력문이 있어도 출력되지 않는다)
+                //    ㄴ--- 함수를 실행하고 난 뒤 다음으로(밑에 부분에 입력) 호출을 해야 한다
+*/
+
+/*
+        const fun = function() {
+            let a = 1
+            let b = 2
+            let c = a + b
+            document.write('c = ', c)
+        }
+
+        fun()
+*/
+
+
+/*
+    // (,)함수 == 화살표함수  ==  (function 글자를 생략한다)
+        const fun = () => {
+            let a = 2
+            let b = 2
+            let c = a + b
+            document.write('c = ', c)
+        }
+
+        fun()
+*/
+
+
+/*
+      //매개변수(a, b)ㄱ
+        function fun(a, b) {
+            let c = a + b
+            document.write('c = ', c)
+        }
+
+        let x = 3
+        let y = 4
+
+        fun(x,y)   // ---인수(x,y)
+*/
+
+
+/*
+        // const fun = function(a, b) {
+        //     let c = a + b
+        //     document.write('c = ', c)
+        // }
+
+        const fun = (a, b) => {
+            let c = a + b
+            document.write('c =', c)
+        }
+
+        fun(5, 6)
+*/
+
+
+/*
+        function fun(a, b) {
+            let c = a + b
+            return c
+        }
+
+        let x = 2
+        let y = 3
+        let result = fun(x, y)
+
+        document.write('result =', result)
+*/
+
+        // const fun = function(a,b) {
+        //     let c = a + b
+        //     return c
+        // }
+
+        // const fun = (a, b) => {
+        //     let c = a + b
+        //     return c
+        // }
+
+
+
+
+/*
+        // const fun = (a, b) => {
+        //     return a + b
+        // }
+
+
+        const fun = (a, b) => a + b  // 함수 안에 let 따로 없이 return문만 존재한다면 괄호와 return을 생략할수있다
+
+        let x = 4
+        let y = 4
+        let result = fun(x, y)
+
+        document.write('result =', result)
+*/
+
+
+
+
+/*
+    // 두개의 정수를 호출되는 함수 프로그램에서 선언하고
+    // 사칙연산을 계산하는 함수를 작성하여 출력하는 프로그램 작성.
+
+    function fun() {
+            let a = 10
+            let b = 2
+            let c = a + b
+            document.write(a, '+', b, ' = ', c, '<br>')
+            let d = a - b
+            document.write(a, '-', b, ' = ', d, '<br>')
+            let e = a * b
+            document.write(a, '*', b, ' = ', e, '<br>')
+            let f = a / b
+            document.write(a, '/', b, ' = ', f)
+        }
+
+        fun() 
+*/
+
+
+/*
+    // Id, Pw를 입력 받고,
+    // 로그인 함수를 호출하여 로그인 여부를 판단하는 프로그램 작성  
+
+    const ID = 'green'
+    const PW = 1234
+
+    const fun = (a, b) => {
+
+        if(a == ID) {
+            if(b == PW) {
+                document.write('로그인 되었습니다')
+            } else {
+                alert('패스워드가 일치하지 않습니다.')
+            }; 
+        } else { 
+            alert('아이디가 일치하지 않습니다.')
+        };
+    }
+        
+    let id = prompt('아이디를 입력해주세요')
+    let pw = parseInt(prompt('패스워드를 입력해주세요'))
+
+    fun(id, pw)
+*/
+
+
+
+
+
+
+
+/*
+    // 두개의 정수를 입력 받아 두수중 큰수를 출력하는 함수 프로그램 작성
+    // 출력은 호출하는 메인 함수에서 할것      -------------------------return을 사용하여 다시풀기ㄱ
+
+        let num1 = parseInt(prompt('첫번째 숫자를 입력해주세요'))
+        let num2 = parseInt(prompt('두번째 숫자를 입력해주세요'))
+
+        function fun(a, b) {
+            if(a > b) {
+                document.write('둘 중의 더 큰 수 = ', a)
+            } else if (a < b) {
+                document.write('둘 중의 더 큰 수 = ', b)
+            } else {
+                document.write('두 수가 같습니다. ')
+            }
+        }
+
+        let x = num1
+        let y = num2
+
+        fun(num1,num2)
+*/
+
+    // 두개의 정수를 입력 받아 두 수 중 큰수를 출력하는 함수 프로그램 작성
+    // 출력은 호출하는 메인 함수에서 할것   -----return 사용
+
+        /*
+        function fun(a, b) {
+            let or = '분별할수 없습니다 . 두 수가 동일합니다'
+            if(a > b) {
+                return a
+            } else if (a < b) {
+                return b
+            } else {
+                return or
+            }
+        }
+
+        let num1 = parseInt(prompt('첫번째 숫자를 입력해주세요'))
+        let num2 = parseInt(prompt('두번째 숫자를 입력해주세요'))
+        // fun(num1,num2)
+        
+        document.write('둘 중의 더 큰 수 = ', fun(num1, num2))
+        */
+
+        
+
+
+
+/*
+        // JavaScript의 함수 return문
+        // 정의>함수에서 실행된 결과 값을 호출한 곳으로 되돌려 줄때 사용
+
+        function calc() { 
+            let result=100+200; 
+            return result;
+        }
+        let num = calc();
+        document.write(num);
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*
+        function calc(x) {
+            let a = 10, b = 5;
+            switch (x)
+            {
+                case'+' : return (a+b);
+                case'-' : return (a-b);
+                case'*' : return (a*b);
+                case'/' : return (a/b);
+            }
+        }
+        */
+    </script>
+</head>
+<body>
+    
+    <!-- <script>
+        let x, res;
+        x = prompt('연산자를 입력하세요.');
+        res = calc(x);
+        
+        document.write(res);
+    </script> -->
+    
+
+
+
+
+
+
+
+    
+</body>
+</html>

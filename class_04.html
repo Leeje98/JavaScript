@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+
+        
+        class Ractangle {
+            constructor(width, height) {
+          // ㄴ--constructor : 클래스의 인스턴스 객체를 생성하고 초기화하는 특별한 메서드
+          // ㄴ--constructor : class에서 constructor는 초기값을 설명해주는 내장된 함수이다.
+                this.width = width
+                this.height = height
+            }
+
+            getPerimeter() {
+                return (this.width + this.height) * 2
+            }
+
+            getArea() {
+                return this.width * this.height
+            }
+        }
+        
+
+        
+        // 상속 :  어떤 클래스가 가지고 있는 속성, 메소드를 다른 클래스에게 물려주는 형태
+        // 부모클래스, 자식클래스
+        //      r자식           r부모
+        class Square extends Ractangle {
+                    // ㄴ-extends : 클래스를 다른 클래스의 자식으로 만들기 위해 class 선언 또는 class 식에 사용
+            constructor(length) {
+                super(length, length)
+                // ㄴsuper : 부모 오브젝트의 함수를 호출할 때 사용
+            }
+        }
+
+        const square = new Square(5)
+        document.write(`정사각형의 둘레: ${square.getPerimeter()} <br>`)
+        document.write(`정사각형의 넓이: ${square.getArea()}`)
+        
+
+        
+        /*
+        const ractangle = new Ractangle(5, 8)
+        document.write(`사각형의 둘레: ${ractangle.getPerimeter()} <br>`)
+        document.write(`사각형의 넓이: ${ractangle.getArea()} <br>`)
+
+        class Square {
+            constructor(length) {
+                this.length = length
+            }
+
+            squarePerimeter() {
+                return this.length * 4
+            }
+
+            squareArea() {
+                return this.length * this.length
+            }
+        }
+
+        const square = new Square(5)
+        document.write(`정사각형의 둘레: ${square.squarePerimeter()} <br>`)
+        document.write(`정사각형의 넓이: ${square.squareArea()}`)
+        */
+
+
+    </script>
+
+    
+    <style>
+        
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

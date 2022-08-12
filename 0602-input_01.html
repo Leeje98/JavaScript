@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input_문제01 - 설문지 만들기</title>
+    <style>
+        body {
+            border: 1px solid #333;
+            width: 700px;
+            padding: 20px;
+        }
+
+        .btn_box {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>설문지</h2>
+    <hr>
+    이름 : <input type="text"> 
+    성별 : <input type="radio" name="gender" checked>여자
+           <input type="radio" name="gender">남자 <br>
+    생년월일 : <input type="date"> 주소 : <input type="text">
+    <br><br>
+    <ol>
+        <li>당신의 취미는? <br>
+            <input type="checkbox">등산 <br>
+            <input type="checkbox">여행 <br>
+            <input type="checkbox">낚시
+        </li> <br><br>
+        <li>당신의 주량은? <br>
+            <input type="radio" name="hobby">근처도 못간다 <br>
+            <input type="radio" name="hobby" checked>한 병 <br>
+            <input type="radio" name="hobby">두 병
+        </li> <br><br>
+        <li>당신이 좋아하는 과일은?
+            <select>
+                <option>딸기</option>
+                <option>포도</option>
+                <option selected>바나나</option>
+                <option>멜론</option>
+                <option>참외</option>
+            </select>
+        </li> <br><br>
+        <li>당신이 관심있는 언어는? (다중선택가능) <br>
+            <select size="5" multiple>
+                <option>HTML5</option>
+                <option>CSS3</option>
+                <option>Java</option>
+                <option>JavaScript</option>
+                <option>jQuery</option>
+                <option>jQuery Mobile</option>
+                <option>React</option>
+                <option>React Native</option>
+                <option>Python</option>
+                <option>C++</option>
+            </select>
+        </li> <br><br>
+        <li>자기소개 <br>
+            <textarea name="" id="" cols="80" rows="5">
+                
+            </textarea>
+        </li>
+    </ol>
+
+    <div class="btn_box">
+        <button type="submit">완료</button> &nbsp;&nbsp;
+        <button type="reset">다시</button>
+    </div>
+    
+
+
+
+
+
+
+</body>
+</html>

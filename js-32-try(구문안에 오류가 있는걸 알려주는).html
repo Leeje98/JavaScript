@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const div = document.querySelector('div')
+
+            // div.textContent = '안녕하세요~'
+
+            // if(div) {
+            //     div.textContent = '안녕하세요~'
+            // } else {
+            //     console.log('div가 없습니다.')
+            // }
+
+            try {
+
+                div.textContent = '안녕하세요~'
+                console.log('try구문의 끝')
+
+            } catch {
+                console.log('catch구문의 끝')
+                // catch : try구문안에 오류가 있다는걸 알려준다
+            } finally {
+                console.log('finally구문의 끝')
+                // finally : 오류가 있든 없든 써야하는 명령어
+            }
+
+        })
+
+
+    </script>
+
+    
+    <style>
+        
+    </style>
+</head>
+<body>
+
+    
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+
+    // getter, setter : private속성을 상황에 따라 읽고(getter), 수정 할 수 있도록(setter) 하는 메소드
+                        // 명칭만 사용할뿐이며, 기능은 내가 넣어줘야한다
+
+    /*
+    class Square {
+        #length
+
+        constructor(length) {
+            this.#length = length
+        }
+
+        setlength(length) {  // 수정되어서 들어오는 값
+            if(value <= 0) {
+                throw `길이는 0보다 커야 한다`
+            }
+            this.#length = value
+        }
+
+        getlength() {
+            returnthis.#length
+        }
+
+        getprimeter() {
+            returnthis.#length * 4
+        }
+
+        getArea() {
+            return this.#length * this.#length
+        }
+
+    }
+
+    const square = new Square(10)
+    document.write(`한변의 길이 : ${square.getLength()} <br>`)
+    
+    square.setLength(20)
+    document.write(`한변의 길이 : ${square.getLength()} <br>`)
+    
+    square.setLength(-10)
+    */
+
+    
+    class Square {
+        #length
+
+        constructor(length) {
+            this.#length = length
+        }
+
+        set length(length) {
+            if(value <= 0) {
+                throw `길이는 0보다 커야 한다`
+            }
+            this.#length = value
+        }
+
+        get lenght() {
+            return this.#length
+        }
+
+        get primeter() {
+            return this.#length * 4
+        }
+
+        get Area() {
+            return this.#length * this.#length
+        }
+    }
+
+    const square = new Square(10)
+    document.write(`한 변의 길이 : ${square.lenght} <br>`)
+    document.write(`둘레 : ${square.primeter} <br>`)
+    document.write(`넓이 : ${square.Area} <br>`)
+    
+
+
+
+    </script>
+
+    
+    <style>
+        
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

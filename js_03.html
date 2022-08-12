@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript ( if - else - substr ) </title>
+    <script>
+
+/*
+        const num = -10
+
+        if(num>0) {
+            document.write(num + '은 양수입니다.')
+        }
+        // 한문장일 경우 중괄호 생략가능 -- 비추천
+
+        if(num === 0 || num < 0) {
+            document.write(num + '은 음수입니다.')
+        }
+*/
+
+/*
+    //세 수 중 제일 큰 수 출력
+        const a = 5
+        const b = 10
+        const c = 3
+
+        if(a > b && a > c) {
+            document.write('제일 큰 값은' + a + '입니다.')
+        }
+
+        if(b > a && a > c) {
+            document.write('제일 큰 값은' + b + '입니다.')
+        }
+
+        if(c > b && c > a) {
+            document.write('제일 큰 값은' + c + '입니다.')
+        }
+*/
+
+/*
+    //주민번호 입력 받아 성별 입력
+
+        let no = prompt('주민 번호 입력', '0007143')
+
+        let result = no.substr(6,1)  //substr(추출을 시작할 위치, 추출할 문자 갯수) --6번째 글자부터 한글자
+        // document.write(result)
+        
+        //제로베이스, zero base 자바스크립트의 기본 추출값 / 무언가를 셀 때 0부터 센다
+
+        if(result == 1 || result == 3) {
+            document.write('남자')
+        }
+
+        if(result === '2' || result === '4') {
+            document.write('여자')
+        }
+
+        // 입력받는 값은 문자값이기 때문에 ===(속성까지 같음)을 쓰려면 ''을 써야 한다
+*/
+
+/*
+    // else (~그렇지 않다면)
+
+        let no = prompt('주민 번호 입력', '0007143')
+
+        let result = no.substr(6,1)  //substr(추출을 시작할 위치, 추출할 문자 갯수) --6번째 글자부터 한글자
+        // document.write(result)
+
+        if(result == 1 || result == 3) {
+            document.write('남자')
+        } else {
+            document.write('여자')
+        }
+*/
+
+/*
+    // 두 수 입력 받아 큰 수 출력
+
+        let num1 = parseInt(prompt('첫번째 수 입력'))
+        let num2 = parseInt(prompt('두번째 수 입력'))
+
+        let max = 0;
+
+        if(num1 > num2) {
+            max = num1
+        } else {
+            max = num2
+        }
+
+        document.write('max = ', max)
+
+        // if(num1 > num2) {
+        //     document.write('max = ', num1)
+        // } else {
+        //     document.write('max = ', num2)
+        // }
+*/
+
+/*
+    // 하나의 정수에 대한 짝수, 홀수를 판별하여 출력하기
+
+        let num = parseInt(prompt('숫자를 입력해 주세요.')) 
+
+        // if(num % 2 == 0) {
+        //     document.write('당신이 입력한 수', num, '는 짝수입니다.')
+        // }
+
+        // if(num % 2 == 1) {
+        //     document.write('당신이 입력한 수 ', num, '은 홀수입니다.')
+        // }
+
+        if(num % 2 == 0) {
+             document.write('당신이 입력한 수', num, '는 짝수입니다.')
+         } else {
+             document.write('당신이 입력한 수 ', num, '은 홀수입니다.')
+         }
+*/
+
+/*
+    //회원탈퇴 시 나타나는 알림창
+
+        let input = confirm('회원탈퇴를 진행하시겠습니까?')
+
+        if(input === true) {
+            document.write('정상적으로 탈퇴되었습니다.')
+        } else {
+            document.write('다음에 다시 방문해 주세요.')
+        }
+*/
+
+/*
+    // 국어, 영어, 수학 점수를 입력 받아 총점, 평균, 학점 구하기
+
+        let kor = parseInt(prompt('국어점수 입력'))
+        let eng = parseInt(prompt('영어점수 입력'))
+        let mat = parseInt(prompt('수학점수 입력'))
+
+        let sum = 0
+        let ame = 0
+        let score = ''
+
+        sum = kor + eng + mat
+        ave = parseInt(sum / 3)
+
+        // console.log(sum)
+        // console.log(ave)
+        //console.log -- 표준입출력 장치(키보드, 모니터)단순 테스트용으로 사용한다 개발자도구[(F12) - 콘솔 창]으로 확인가능
+
+        if(ave >= 90) {
+            score = 'A'
+        } else if(ave >= 80) {
+            score = 'B'
+        } else if(ave >= 70) {
+            score = 'C'
+        } else if(ave >= 60) {
+            score = 'D'
+        } else {
+            score = 'B'
+        }
+
+        document.write('국어점수 : ', kor, '</br>')
+        document.write('영어점수 : ', eng, '</br>')
+        document.write('수학점수 : ', mat, '</br>')
+        document.write('총 점 : ', sum, '</br>')
+        document.write('평 균 : ', ave, '</br>')
+        document.write('학 점 : ', score)
+*/
+
+/*
+    // 쇼핑몰 구입 금액에 따라 할인율이 다르게 적용
+    // 10000원 이상 10% / 5000원 이상 5% / 3000원 이상 3% / 1000원 이상 1% 할인
+    // 구입가와 할인가 출력하기(구입가격 입력받기)
+
+        let price = parseInt(prompt('구입가 입력'))
+
+        if(price >= 10000) {
+            A = price * 10/100
+        } else if(price >= 5000) {
+            A = price * 5/100
+        } else if(price >= 3000) {
+            A = price * 3/100
+        } else if(price >= 1000) {
+            A = price * 1/100
+        } else {
+            A = 0
+        }
+
+        B = price - A
+
+        document.write('정가 : ', price, '</br>')
+        document.write('할인가 : ', A, '</br>')
+        document.write('결제가 : ', B)
+*/  
+
+/*
+    //  년도 포함 날짜를 입력받고 해당 계절 출력 (substr 이용)
+
+        let date = prompt('날짜를 입력해 주세요', '20220502')
+        let result = date.substr(4,2)
+
+        if(result == 12 || result == 01 || result == 02) {
+            document.write('해당 날짜의 계절은 겨울 입니다.')
+        } else if(result == 03 || result == 04 || result == 05) {
+            document.write('해당 날짜의 계절은 봄 입니다.')
+        } else if(result == 06 || result == 07 || result == 08) {
+            document.write('해당 날짜의 계절은 여름 입니다.')
+        } else if(result == 09 || result == 10 || result == 11) {
+            document.write('해당 날짜의 계절은 가을 입니다.')
+        } else {document.write ('날짜를 정확히 입력해 주세요.')}
+*/
+
+/*
+    // 이탈리안 음식을 주문하는 어플에서 식사를 주문하려고 한다.
+
+        let menu = prompt('당신의 주문을 기다립니다.')
+
+        if(menu == 'p' || menu == 'P') {
+            document.write('피자를 주문하셨습니다')
+        } else if(menu == 's' || menu == 'S') {
+            document.write('스파게티를 주문하셨습니다')
+        } else if(menu == 'r' || menu == 'R') {
+            document.write('리조또를 주문하셨습니다')
+        } else if(menu == 'd' || menu == 'D') {
+            document.write('드링크를 주문하셨습니다')
+        } else {
+            document.write('존재하지 않는 메뉴입니다')
+        }
+*/
+
+
+    // 쇼핑몰 구매 금액(6개월 누적)에 따른 회원등급 산정 프로그램 작성, 등급에 맞는 혜택 출력하기 
+
+        let rating = parseInt(prompt('회원님의 6개월 누적쇼핑금액')) 
+
+        if(rating >= 300000) {
+            document.write('고객님의 등급은 vip 입니다.')
+        } else if(rating >= 200000) {
+            document.write('고객님의 등급은 gold 입니다.')
+        } else if(rating >= 100000) {
+            document.write('고객님의 등급은 silver 입니다.')
+        } else {
+            document.write('고객님의 등급은 bronze 입니다.')
+        }
+
+
+
+
+    </script>
+    <style>
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+
+    사용자 ID : <input type="text" name="id" size="20" maxlength="10"><br>
+    비밀번호 : <input type="password" name="password" size="20" maxlength="16"><br><br>
+    
+    제 목 : <input type="text" size="50" name="title"><br>
+    소제목 : <input type="text" size="30" name="sutTitle" id="disabled"><br>
+    <textarea name="content" id="" cols="80" rows="10">
+        이곳에 내용을 작성하세요~
+    </textarea>
+
+
+    <br><br><br><br>
+
+
+    <form action="ex.asp" name="frm" method="post">
+        <ol type="I">
+            <li>당신의 성별을 선택하시오<br>
+                <input type="radio" name="gender" value="male" checked>남
+                <input type="radio" name="gender" value="female">여
+            </li><br>
+            <li>응시할 과목을 선택하시오(복수선택가능) <br>
+                <input type="checkbox" name="kor" value="t1">국어<br>
+                <input type="checkbox" name="eng" value="t1">영어<br>
+                <input type="checkbox" name="mat" value="t1">수학
+            </li>
+        </ol>
+    </form>
+    
+
+    <br><br><br><br>
+
+
+    <select>
+        <option>서울시</option>
+        <option>부산시</option>
+        <option>대구시</option>
+    </select><br><br>
+
+    <select>
+        <option>서울시</option>
+        <option selected>부산시</option>
+        <option>대구시</option>
+    </select><br><br>
+
+    <select size="3"> <!-- 드롭다운 방식이 아닌 리스트 형식으로 보여지는 것. 스크롤이 생긴다. 한화면에 보여지는 리스트갯수 값 -->
+        <option>서울시</option>
+        <option>부산시</option>
+        <option>대구시</option>
+        <option>서울시</option>
+        <option>부산시</option>
+        <option>대구시</option>
+    </select>
+    
+
+    <br><br><br><br>
+
+
+    <input type="button" value="입력">
+    <input type="submit" value="전송">
+    <input type="reset" value="취소">
+    <br><br>
+    <button type="button">입력</button>
+    <button type="submit">전송</button>
+    <button type="reset">취소</button>
+
+
+    <br><br><br><br>
+
+
+    &nbsp; : 칸띄우기 (ex: &nbsp;&nbsp;&nbsp;) : 비추천. 스타일시트에서 제어를 못한다. 쓸거면 두세개까지만 쓰자
+
+
+    <br><br><br><br>
+
+    
+    정리
+
+    <form name="frm">
+        사용자 ID : <input type="text" size="10" name="id"><br>
+        비밀번호 : <input type="password" size="10" name="password"><br><br>
+        선택과목<br>
+        <select>
+            <option>국어</option>
+            <option>영어</option>
+            <option selected>수학</option>
+        </select>
+        <br><br><br><br>
+        <input type="submit" value="완 료">&nbsp;&nbsp;&nbsp;
+        <input type="reset" value="취 소">
+    </form>
+    
+
+    <br><br><br><br>
+
+
+    
+    <fieldset>
+        <legend>INPUT요소 태그</legend>
+        <input type="button" value="입력">
+        <input type="submit" value="전송">
+        <input type="reset" value="취소">
+    </fieldset>
+
+
+    <br><br><br><br>
+
+
+    <input type="number" min="1" max="10" step="2">
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

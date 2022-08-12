@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            let userId = document.querySelector('#user_id')
+            let userPw1 = document.querySelector('#user_pw1')
+            let userPw2 = document.querySelector('#user_pw2')
+
+            userId.onchange = checkId
+            userPw1.onchange = checkPw
+            userPw2.onchange = comparePw
+
+            function checkId() {
+                if(user_id.value.length < 4 || userId.value.length > 15) {
+                    alert('4~15글자로 아이디를 입력하세요!')
+                    // userId.select()
+                            // select() : 자바스트립트 내장 함수/포커스잡아주는것
+                    // userId.value = ''   
+                    // userId.focus()
+                }
+            }
+
+            function checkPw() {
+                if(userPw1.value.length < 4) {
+                    alert('비밀번호는 4글자 이상이어야 합니다!')
+                }
+                userId.value = ''   
+                userId.focus()
+            }
+
+            function comparePw() {
+                if(userPw1.value != userPw2.value) {
+                    alert('암호가 다릅니다. 다시 입력해주세요!')
+                }
+                userPw2.value = ''
+                userPw2.focus()
+            }
+
+
+        })
+        
+
+
+    </script>
+
+    
+</head>
+<body>
+
+    <div class="container">
+        <h3>회원가입</h3>
+        <form action="">
+            <ul>
+                <li>
+                    <label for="user_id">아이디</label>
+                    <input type="text" id="user_id" placeholder="4~15자 입력" required autofocus>
+                </li>
+                <li>
+                    <label for="use_pw1">비밀번호</label>
+                    <input type="text" name="" id="user_pw1" placeholder="4자리 이상">
+                </li>
+                <li>
+                    <label for="user_pw2">비밀번호 확인</label>
+                    <input type="text" id="user_pw2" required>
+                </li>
+            </ul>
+        </form>
+    </div>
+
+    
+</body>
+</html>

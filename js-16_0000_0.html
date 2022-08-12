@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            let isOpen = false  // 참/거짓을 만들어내는 변수는 앞에 is를 붙인다  // 디폴트 값은 보이지 않는 상태라서 false
+            let btn = document.querySelector('.btn')
+
+            btn.addEventListener('click', function() {
+
+                if(isOpen == false) {
+                    this.innerText = '상세설명닫기'
+                    document.querySelector('.detail').style.display = 'block'
+                    isOpen = true
+                } else {
+                    this.innerText = '상세설명보기'
+                    document.querySelector('.detail').style.display = 'none'
+                    isOpen = false
+                }
+
+            })
+
+        })
+        
+
+
+
+
+    </script>
+
+    
+    <style>
+
+        .btn {
+            display: block;
+            width: 180px;
+            height: 50px;
+            background-color: blueviolet;
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            line-height: 50px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .detail {display: none;}
+        
+
+    </style>
+</head>
+<body>
+
+    <div class="desc">
+        <a href="#" class="btn">상세설명보기</a>
+    </div>
+    <hr>
+    <div class="detail">
+        <h2>상세설명정보</h2>
+        《별이 빛나는 밤》은 네덜란드의 화가 빈센트 반 고흐의 가장 널리 알려진 작품이자 정신병을 앓고 있을 당시 고흐가 그린 그림이다. 1889년 생 레미의 정신병원에서 고흐는 정신적 질환으로 인한 고통을 떠올려 그림 속의 소용돌이로 묘사했다.
+    </div>
+    
+</body>
+</html>

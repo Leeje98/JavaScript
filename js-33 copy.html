@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+        const menus = document.querySelectorAll(".addMenu input");
+        const result = document.querySelector(".result");
+
+        menus.forEach((menu) => menu.addEventListener("change", () => {
+        if (menu.checked) {
+        result.textContent = result.textContent * 1 + menu.value * 1;
+        } else {
+        result.textContent = result.textContent * 1 - menu.value * 1;
+        }
+        }))
+        
+    })
+
+    </script>
+
+    
+    <style>
+
+
+    </style>
+</head>
+<body>
+
+    <h1>피자 주문</h1>
+    <fieldset>
+        <legend>사이즈</legend>
+        <p>Large - 24000 원</p>
+    </fieldset>
+
+    <fieldset class="addMenu">
+        <legend>추가 주문</legend>
+        <input type="checkbox" value="800" class="pickle">
+        <span>피클(800원)</span>
+        <input type="checkbox" value="300" class="chilli">
+        <span>칠리 소스(300원)</span>
+        <input type="checkbox" value="200" class="deeping">
+        <span>디핑 소스(200원)</span>
+        <input type="checkbox" value="4800" class="cheeseStick">
+        <span>치즈스틱(4개, 4800원)</span>
+        <input type="checkbox" value="2400" class="corn">
+        <span>콘 샐러드(2400원)</span>
+    </fieldset>
+
+    <fieldset>
+        <legend>합계</legend>
+        <p><span class="result">24000</span>원</p>
+    </fieldset>
+
+
+
+</body>
+</html>

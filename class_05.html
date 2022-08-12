@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+
+
+        
+        class User {
+            constructor(first, last) {
+                this.first = first
+                this.last = last
+            }
+
+            getFullName() {
+                return `${this.first} ${this.last}`
+            }
+        }
+
+        const myName = new User('Hong', 'gil_dong')
+        document.write(myName.getFullName(), '<br><br>')
+
+        class Member extends User {
+            constructor(first, last, telNo) {
+                super(first, last)
+                this.telNo = telNo
+            }
+        }
+        const member = new Member('homg', 'gil_dong', '010-1234-5678')
+        document.write(`${member.getFullName()} / ${member.telNo}`)
+        
+
+        /*
+        class User {
+            constructor(name, telNo) {
+                this.name = name
+                this.telNo = telNo
+            }
+
+            output() {
+                return `${this.name} / ${this.telNo}`
+            }
+        }
+        
+        class Member extends User {
+            constructor(name, telNo, addr) {
+                super(name, telNo)
+                this.addr = addr
+            }
+        }
+
+        const member = new Member('Hong gil_dong', '010-1234-5678', 'Busan')
+        document.write(`${member.output()} / ${member.addr}`)
+        */
+
+
+    </script>
+
+    
+    <style>
+        
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

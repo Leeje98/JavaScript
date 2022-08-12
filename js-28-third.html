@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const oneBack = document.querySelector('#one_back')
+            const twoBack = document.querySelector('#two_back')
+
+            oneBack.addEventListener('click', () => {
+                history.go(-1)
+                //History.go() : history 세션에서 숫자로 지정한 (앞or뒤였던 기록)페이지를 로딩합니다. 
+                //               인자()로 전달하는 파라미터 값에 따라 history를 통해서 페이지를 앞 뒤로 (음수 값:뒤로 이동 | 양수 값:앞으로 이동 | 넣지않거나 0:새로고침효과)이동할 수 있습니다. 
+            })
+
+            twoBack.addEventListener('click', () => {
+                history.go(-2)
+            })
+
+        })
+
+
+    </script>
+
+    
+    <style>
+        
+    </style>
+</head>
+<body>
+    
+    <h1>세번째 페이지</h1>
+    
+    <button id="one_back">1단계 이전페이지</button>
+    <button id="two_back">2단계 이전페이지</button>
+    
+</body>
+</html>

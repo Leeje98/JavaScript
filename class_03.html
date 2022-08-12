@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+
+    // 객체를 효율적이고 안정적으로 사용하기 위해서 만든것
+
+    // 1.클래스 선언
+        class Student {  // 클래스는 첫번째 문자를 대문자로 구분한다
+            constructor(name, kor, eng, mat) {
+                this.name = name
+                this.kor = kor
+                this.eng = eng
+                this.mat = mat                            // 콤마(,)가 필요없다
+            }
+
+            getSum() {
+                return this.kor + this.eng + this.mat
+            }
+
+            getAver() {
+                return this.getSum() / 3
+            }
+
+            output() {
+                return `${this.name} ${this.kor} ${this.eng} ${this.mat} ${this.getSum()} ${this.getAver()}`
+            }
+
+        }
+
+    // 2.인스턴스 선언
+    // const student = new Student('kim', 90, 90, 90)          // 하나의 값만 넣을거면 쓴다
+    // const student1 = new Student('lee', 100, 100, 100)         
+
+    // 3.데이터 생성
+    const students = []                                    // 여러개의 값을 넣을거면 쓴다 -- 갯수를 정해놓지 않겠다--언제든 갯수 상관없이 추가가능
+    students.push(new Student('kim', 87, 98, 88))
+    students.push(new Student('lee', 98, 96, 92))
+    students.push(new Student('park', 76, 96, 94))
+    students.push(new Student('kang', 98, 50, 100))
+
+    students.forEach( (student) => {
+        // document.write(student.output(), '<br>')
+        console.log(student.output(), '<br>')              // output() : 메소드의 출력
+    })
+
+
+
+    </script>
+
+    
+    <style>
+        
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

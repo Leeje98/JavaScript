@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            let openBtn = document.querySelector('.open')
+            let closeBtn = document.querySelector('.close')
+
+            openBtn.onclick = showDetail
+            closeBtn.onclick = hiddenDetail
+
+
+            function showDetail() {
+                document.querySelector('.detail').style.display = 'block'
+                openBtn.style.display = 'none'
+            }
+
+            function hiddenDetail() {
+                document.querySelector('.detail').style.display = 'none'
+                openBtn.style.display = 'block'
+            }
+
+        })
+
+
+
+
+    </script>
+
+    
+    <style>
+
+        .container {
+            width: 500px;
+        }
+
+        .container img {
+            width: 500px;
+            display: block;
+        }
+
+        .detail {
+            display: none;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="./img/star_night.jpg" alt="">
+        <button class="open">상세 설명 보기</button>
+
+        <div class="detail">
+            <h3>별이 빛나는 밤</h3>
+            <p>《별이 빛나는 밤》은 네덜란드의 화가 빈센트 반 고흐의 가장 널리 알려진 작품이자 정신병을 앓고 있을 당시 고흐가 그린 그림이다. 1889년 생 레미의 정신병원에서 고흐는 정신적 질환으로 인한 고통을 떠올려 그림 속의 소용돌이로 묘사했다.</p>
+
+            <button class="close">상세 설명 닫기</button>
+        </div>
+
+        
+
+    </div>
+    
+</body>
+</html>

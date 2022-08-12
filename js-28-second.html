@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const prev = document.querySelector('#prev')
+            const next = document.querySelector('#next')
+
+            prev.addEventListener('click', () => {
+                history.back()
+                // history.back()  : 브라우저가 세션 기록의 바로 뒤 페이지로 이동하도록 지시
+                //                   history.go(-1)와 같다 
+                //                   이전 페이지가 없는 경우 아무것도 하지 않는다
+            })
+
+            next.addEventListener('click', () => {
+                history.forward()
+                //History.forward() : 브라우저가 세션 기록의 바로 앞 페이지로 이동하도록 지시
+                //                    history.go(1)과 같다 
+                //                    다음 페이지가 없는 경우 아무것도 하지 않는다
+            })
+
+        })
+
+
+    </script>
+
+    
+    <style>
+        
+    </style>
+</head>
+<body>
+    
+    <h1>두번째 페이지</h1>
+    <a href="./js-28-third.html">3번째 페이지로 이동</a>
+    
+    <button id="prev">이전페이지</button>
+    <button id="next">다음페이지</button>
+    
+</body>
+</html>

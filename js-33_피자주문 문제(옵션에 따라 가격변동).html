@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // const Total = document.querySelector('.total')
+            // const sum = 24000
+            // Total.textContent = `${} 원`
+
+            const menus = document.querySelectorAll('.menu input')
+            let Total = document.querySelector('.total')
+
+            menus.forEach((menu) => menu.addEventListener('change', () => {
+
+                if(menu.checked) {
+                    Total.textContent = parseInt(Total.textContent) + parseInt(menu.value)
+                } else {
+                    Total.textContent = parseInt(Total.textContent) - parseInt(menu.value)
+                }
+            }))
+
+
+
+        })
+
+
+    </script>
+
+    
+    <style>
+        h2 {text-align: center;}
+        
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>피자주문</h2>
+        <form action="" name="order" id="order">
+
+            <fieldset>
+                <legend>사이즈</legend>
+                <p>Large - 24000원</p>
+            </fieldset>
+            <fieldset class="menu">
+                <legend>추가주문</legend>
+                <input type="checkbox" value="800">피클(800원)
+                <input type="checkbox" value="300">칠리소스(300원)
+                <input type="checkbox" value="200">디핑소스(200원)
+                <input type="checkbox" value="4800">치즈스틱(4개,4800원)
+                <input type="checkbox" value="2400">콘샐러드(2400원)
+            </fieldset>
+            <fieldset>
+                <legend>합계</legend>
+                <p><span class="total">24000</span>원</p>
+            </fieldset>
+
+        </form>
+    </div>
+    
+</body>
+</html>

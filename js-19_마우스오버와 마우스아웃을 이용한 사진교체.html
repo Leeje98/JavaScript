@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+                   // rr 여기에 평션을 부른다  (js-15.html 파일 참고할것)
+        document.addEventListener('DOMContentLoaded', () => {
+                                       // ㄴㄴ-- 이벤트(돔|DOM)를 로드한다
+
+            let img = document.querySelector('.img > img')
+
+            img.onmouseover = over
+            img.onmouseout = out
+
+            // img.onmouseover = function() {
+            //     img.src = './img/new01_on.jpg'
+            // }
+
+            function over() {
+                img.src = './img/new01_on.jpg'
+            }
+
+            function out() {
+                img.src = './img/new01_off.jpg'
+            }
+
+            // img.addEventListener('mouseover', function() {
+            //     img.setAttribute('src', './img/new01_on.jpg')
+            // })
+
+            // img.addEventListener('mouseover', over)
+
+            // img.addEventListener('mouseout', function() {
+            //     img.setAttribute('src', './img/new01_off.jpg')
+            // })
+
+        })
+
+
+    </script>
+
+    
+    <style>
+
+    </style>
+</head>
+<body>
+
+    <div class="img">
+        <img src="./img/new01_off.jpg" alt="">
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            let newDiv = document.createElement('div')
+            let newTxt = document.createTextNode('Good-Morning!')
+
+            newDiv.appendChild(newTxt)
+
+            document.body.appendChild(newDiv)  // 바디태그의 자식으로 등록 - 태그로 존재
+
+            // let attr = document.createAttribute('class')
+            // attr.value = 'greet'
+
+            // newDiv.setAttributeNode(attr)  // css가 먹힘
+
+            newDiv.setAttribute('class', 'greet')                    // css를 입히도록 클래스명을 달아줌
+            document.querySelector('.greet').style.color = 'red'     // 클래스명으로 제대로 생성이 되었다면 적용이 됨
+
+
+        })
+
+
+    </script>
+
+    
+    <style>
+
+        .greet {
+            font-size: 30px;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <!-- <div class="greet">Goog-Morning!</div> -->
+    
+</body>
+</html>
